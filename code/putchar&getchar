@@ -1,6 +1,6 @@
 //和printf/scanf 相似但是是char类型 putchar 输出一个字符  getchar输入一个字符
-
-	char ch;
-	ch = getchar();//获取一个字符 
-	putchar(ch);
+char ch;
+ch = getchar();//获取一个字符 
+putchar(ch);
 //printf("ch = %c", ch);//输出这个字符
+
