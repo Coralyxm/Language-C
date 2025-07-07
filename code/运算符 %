@@ -1,0 +1,7 @@
+// 运算符 % 必须是整数（int、long、char 等），不能用于浮点数 两数相除取余数
+int main() {
+    int a = 10, b = 3;
+    int remainder = a % b; // 10 ÷ 3 = 3 余 1 // remainder余数
+    printf("10 %% 3 = %d\n", remainder); // 输出 1
+    return 0;
+}
