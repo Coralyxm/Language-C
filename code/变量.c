@@ -28,5 +28,30 @@ float a = 1.0
 double b = 2.00
 printf("%f", a);
 printf("%lf", b);
+1.000000 / 2.000000
+
+//变量的作用域
+int i = 12;//全局变量
+
+int main(){	
+	printf("i = %d", i);//可用 
+	return 0;
+}//作用域结束 
+int call(){
+	printf("i = %d", i);//可用 
+	return 0;
+}//作用域结束 
+
+//不同的作用域范围内不同名称 不会报错
+int i = 10;
+int main()
+{
+  int i = 20;
+  return 0;
+}
 
 
+//转义符 输出%
+int main(){
+	printf("%f%%", 100.0);
+}
