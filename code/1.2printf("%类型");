@@ -53,8 +53,52 @@ printf("使用%e输出: %e\n", num);使用%e输出: 1.234568e+03 //小数部位�
 double num = 1234.56789;
 printf("使用%E输出: %E\n", num);//使用%E输出: 1.234568E+03 //小数部位只能保留6位，+03，表示10³
 
+// %g 和 %G用于格式化浮点数 若数值非常大或非常小（超出 ±10^±4 范围），%g/%G 会强制使用科学计数法
+double a = 123.456789;
+double b = 0.0000123456789;
+double c = 123456789.0;
+ 
+printf("%%g: %g\n", a);   // 输出: 123.457 (默认6位有效数字)
+printf("%%G: %G\n", a);   // 输出: 123.457 (与%g相同)
+ 
+printf("%%g: %g\n", b);   // 输出: 1.23457e-05 (科学计数法，小写e)
+printf("%%G: %G\n", b);   // 输出: 1.23457E-05 (科学计数法，大写E)
+ 
+printf("%%g: %g\n", c);   // 输出: 1.23457e+08 (科学计数法)
+printf("%%G: %G\n", c);   // 输出: 1.23457E+08 (科学计数法)
+ 
+// 指定精度（如4位有效数字）
+printf("%%.4g: %.4g\n", c);  // 输出: 1.235e+08
+printf("%%.4G: %.4G\n", c);  // 输出: 1.235E+08
 
+// %c 用于输入或输出单个字符（char 类型）printf 中，将对应的参数解释为 char 并打印其 ASCII 字符
+char ch = 'A';
+printf("%c\n", ch);  // 输出: A
 
+// %s 输入或输出字符串（char[] 或 char* 类型）
+printf("%s", string_value);       // 输出字符串
+scanf("%s", string_variable);     // 读取字符串（无需 &，因为数组名就是地址）
 
+char str[100];
+printf("Enter a string: ");
+scanf("%s", str);  // 输入 "Hello"（遇到空格停止）
+printf("You entered: %s\n", str);  // 输出: Hello
+// scanf 的 %s 会丢弃前导空白字符，但遇到空格、制表符或换行符时停止读取
+//读取带空格的字符串：scanf 的 %s 无法直接读取包含空格的字符串，可用 fgets 替代
+fgets(str, sizeof(str), stdin);  // 读取整行（包括空格）
 
+// %p 用于输出指针变量的内存地址（以十六进制形式）
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *ptr = &x;
+
+    printf("Address of x: %p\n", (void*)ptr);  // 输出类似 0x7ffd12345678
+
+    return 0;
+}
+强制转换 (void*)：C标准要求 %p 的参数是 void* 类型，因此指针变量应显式转换（尽管多数编译器允许直接传递其他指针类型）。
+地址格式：输出通常是十六进制（如 0x7ffd...），但具体格式由实现定义。
+scanf 的 %p：理论上可以读取十六进制地址并转换为指针，但几乎无实际用途，且存在安全风险。
 
