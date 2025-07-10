@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int a;
+    double b = 3.14;
+
+    double res = sizeof a + b; 
+    //由于sizeof 优先级比 + 高 会优先计算sozeof(a) a 是 int 型，所以占4个字节 得到结果 4 再计算 4+3.14 = 7.14
+    printf("res = %lf\n", res); // 7.14
+
+    return 0;
+}
+
+// size_t 是无符号类型，因此不能使用 %d（有符号整数）或 %ld（有符号长整数）。C99 标准引入了 %zu 作为 size_t 的专用格式说明符
+float a = 3.14f; // 注意：3.14 默认是 double，加 'f' 表示 float
+printf("%zu\n", sizeof(a)); // 输出: 4（通常 float 为 4 字节）
+
+double a = 3.14; // 默认情况下，浮点数字面量是 double 类型
+printf("%zu\n", sizeof(a)); // 输出: 8（通常 double 为 8 字节）
