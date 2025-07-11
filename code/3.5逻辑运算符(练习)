@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{
+    int result = 3 > 5 || 2 < 4 && 6 < 1;
+
+    printf("result = %i", result); // 结果为 0
+    return 0;
+}
+
+//  || 一真为真  && 一假为假  ! 假为真、真为假
