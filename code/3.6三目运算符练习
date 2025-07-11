@@ -1,0 +1,14 @@
+#找出两个数中的最小值
+#include <stdio.h>
+
+int main() {
+    int x = 15;
+    int y = 30;
+    
+    int min = (x < y) ? x : y;
+    
+    printf("最小值是: %d\n", min);
+    // 输出: 最小值是: 15
+    
+    return 0;
+}
