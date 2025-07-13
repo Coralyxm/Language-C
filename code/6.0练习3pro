@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    double num1, num2, num3;
+    printf("输入三个数:");
+    scanf("%f %f %f", &num1, &num2, &num3);
+
+    if(num1 > num2 && num1 > num3)
+    {
+        if(num2 > num3)
+        {
+            printf("num1 > num2 > num3 max=num1"); 
+        }
+        else
+        {
+            printf("num1 > num3 > num2 max=num1");
+        }
+    }
+
+    if (num3 > num2 && num3 > num1)
+    {
+        if(num2 > num1)
+        {
+            printf("num3 > num2 > num1 max=num3"); 
+        }
+        else
+        {
+            printf("num3 > num1 > num2 max=num3");
+        }
+    }
+    
+    if (num2 > num1 && num2 > num3)
+    {
+       if(num3 > num1)
+        {
+            printf("num2 > num3 > num1 max=num2"); 
+        }
+        else
+        {
+            printf("num2 > num1 > num3 max=num2");
+        }
+    }
+
+    return 0;
+}
