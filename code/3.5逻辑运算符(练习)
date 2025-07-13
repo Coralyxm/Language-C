@@ -8,3 +8,20 @@ int main()
 }
 
 //  || 一真为真  && 一假为假  ! 假为真、真为假
+
+
+//0 在 C 中代表 假（false）。
+//!0 就是对 0（假）取反，结果为 真（true），即 1
+// !10 → 0（因为 10 是非零值，!10 就是 0）
+#include <stdio.h>
+int main(){
+    // ()优先级高，先计算()里面的内容
+    // 10==10为真，所以result = !(1);
+    // !代表真变假，假变真，所以结果是假0
+    int result = !(10 == 10);
+    int result2 = ! 10 == 10;
+    int result3 = ! 10 == ! 10;
+    printf("result = %i\n", result); // 0
+    printf("result2 = %i\n", result2); // 0
+    printf("result3 = %i\n", result3); // 1
+}
