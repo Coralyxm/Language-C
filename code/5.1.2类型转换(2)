@@ -1,0 +1,10 @@
+// (double)(1 / 2); 和 double 1 / 2;
+#include <stdio.h>
+int main()
+{
+    double a = (double)(1 / 2); // 在 () 里 1 / 2 是整数除法，结果为 0
+    double b = (double)1 / 2; // 无 () 1 是 int 类型，但被强制转换为 double 类型，2 也会被自动提升为 double 类型
+    printf(" a = %i\n", a); // 0
+    printf(" b = %f\n", b); // 0.5
+    return 0;
+}
