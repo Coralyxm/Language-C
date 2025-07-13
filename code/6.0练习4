@@ -1,1 +1,48 @@
 4.用两种方式交换两个变量的保存的值
+//临时变量法 和 算术/位运算法
+// 1.临时变量法
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, temp;
+    printf("交换前: a = %d, b = %d\n", a, b);
+
+    temp = a;  // 暂存 a 的值
+    a = b;     // 将 b 的值赋给 a
+    b = temp;  // 将暂存的 a 的值赋给 b
+
+    printf("交换后: a = %d, b = %d\n", a, b);
+    return 0;
+}
+// 2.算术/位运算法
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20;
+
+    printf("交换前: a = %d, b = %d\n", a, b);
+
+    // 交换逻辑（加减法）
+    a = a + b;  // a = 30
+    b = a - b;  // b = 10
+    a = a - b;  // a = 20
+
+    printf("交换后: a = %d, b = %d\n", a, b);
+    return 0;
+}
+// 异或法
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20;
+
+    printf("交换前: a = %d, b = %d\n", a, b);
+
+    // 交换逻辑（异或法）
+    a = a ^ b;  // a = 10 ^ 20
+    b = a ^ b;  // b = (10 ^ 20) ^ 20 = 10
+    a = a ^ b;  // a = (10 ^ 20) ^ 10 = 20
+
+    printf("交换后: a = %d, b = %d\n", a, b);
+    return 0;
+}
