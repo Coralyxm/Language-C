@@ -8,3 +8,15 @@ int main()
     printf(" b = %f\n", b); // 0.5
     return 0;
 }
+
+// 类型转换不会影响原本的值
+#include <stdio.h>
+int main()
+{
+    double a = 3.14;
+    int num = (int) a;
+
+    printf("num = %d\n", num); // 3
+    printf("a = %f\n", a); // 3.14
+    return 0;
+}
